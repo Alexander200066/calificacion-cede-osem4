@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="calificacion_cedeñosem4.MainPage"
+             Title="Calificaciones">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,20"
+            Spacing="16">
+
+            <Label
+                Text="Instituto Sudamericano"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Sistema de calificaciones"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+
+            <Border Padding="16" StrokeShape="RoundRectangle 12" BackgroundColor="{AppThemeBinding Light=#F4F1FC, Dark=#302750}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Datos del estudiante" FontAttributes="Bold" FontSize="18" />
+                    <Label Text="Nombre del estudiante" />
+                    <Picker x:Name="StudentPicker" Title="Seleccione un estudiante" />
+                    <Label Text="Fecha de evaluación" />
+                    <DatePicker x:Name="EvaluationDatePicker" Format="dd/MM/yyyy" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="16" StrokeShape="RoundRectangle 12" BackgroundColor="{AppThemeBinding Light=#F4F1FC, Dark=#302750}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Notas sobre 10" FontAttributes="Bold" FontSize="18" />
+                    <Label Text="Nota Seguimiento 1 (30 %)" />
+                    <Entry x:Name="Seguimiento1Entry" Placeholder="Ejemplo: 8,5" Keyboard="Numeric" MaxLength="4" />
+                    <Label Text="Examen 1 (20 %)" />
+                    <Entry x:Name="Examen1Entry" Placeholder="Ejemplo: 7,5" Keyboard="Numeric" MaxLength="4" />
+                    <Label Text="Nota Seguimiento 2 (30 %)" />
+                    <Entry x:Name="Seguimiento2Entry" Placeholder="Ejemplo: 9" Keyboard="Numeric" MaxLength="4" />
+                    <Label Text="Examen 2 (20 %)" />
+                    <Entry x:Name="Examen2Entry" Placeholder="Ejemplo: 8" Keyboard="Numeric" MaxLength="4" />
+                    <Label Text="Cada nota debe estar entre 0 y 10." FontSize="12" TextColor="{StaticResource Gray600}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button
+                Text="Calcular calificación"
+                Clicked="OnCalculateClicked"
+                HorizontalOptions="Fill"
+                FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
